@@ -13,8 +13,8 @@ Gem::Specification.new do |spec|
     spec.extra_rdoc_files   = Dir["README.md", "LICENSE"]
     spec.require_paths      = ["lib"]
     
-    spec.add_dependency "jekyll"
+    spec.add_dependency "jekyll", "~> 4.2.0"
     
-    spec.add_development_dependency "rubocop"
-    spec.add_development_dependency "rubocop-jekyll"
+    spec.add_development_dependency "rubocop", "~> 1.13.0"
+    spec.add_development_dependency "rubocop-jekyll", "~> 0.11.0"
 end
