@@ -1,6 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("lib", __dir__)
-
-require "reduce-title-redundancy/version"
+require_relative "lib/reduce-title-redundancy/version"
 
 Gem::Specification.new do |spec|
     spec.name          = "jekyll-reduce-title-redundancy"
@@ -11,11 +9,12 @@ Gem::Specification.new do |spec|
     spec.homepage      = "https://github.com/carterpape/jekyll-reduce-title-redundancy"
     spec.license       = "GPL-3.0-or-later"
     
-    spec.files         = `git ls-files lib *.md`.split("\n")
-    spec.platform      = Gem::Platform::RUBY
-    spec.require_paths = ["lib"]
+    spec.files              = Dir["lib/**/*"]
+    spec.extra_rdoc_files   = Dir["README.md", "LICENSE"]
+    spec.require_paths      = ["lib"]
     
     spec.add_dependency "jekyll"
+    
     spec.add_development_dependency "rubocop"
     spec.add_development_dependency "rubocop-jekyll"
 end

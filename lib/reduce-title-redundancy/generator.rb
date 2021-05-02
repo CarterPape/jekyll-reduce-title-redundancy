@@ -24,11 +24,13 @@ module Jekyll
             STRIP_TITLE_KEY =   "strip_title"
             
             def initialize(site)
+                Jekyll.logger.debug("Hello:", "There")
                 @site = site
                 @title_is_generated = nil
             end
             
             def generate(site)
+                Jekyll.logger.debug("Hello:", "There")
                 @site = site
                 return if disabled?
                 
@@ -135,7 +137,6 @@ module Jekyll
                 return option(COLLECTIONS_KEY) == true
             end
             
-            # Documents (posts and collection items) have their title inferred from the filename. We want to override these titles, because they were not excplicitly set.
             def inferred_title?(document)
                 return document.is_a?(Jekyll::Document)
             end
@@ -160,7 +161,7 @@ module Jekyll
         class Filters
             include Jekyll::Filters
             include Liquid::StandardFilters
-
+            
             def initialize(site)
                 @site    = site
                 @context = ReduceTitleRedundancy::Context.new(site)
@@ -169,11 +170,11 @@ module Jekyll
         
         class Context
             attr_reader :site
-        
+            
             def initialize(site)
                 @site = site
             end
-        
+            
             def registers
                 { :site => site }
             end
