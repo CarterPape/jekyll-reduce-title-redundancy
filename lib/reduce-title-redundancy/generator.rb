@@ -157,27 +157,5 @@ module Jekyll
                 return @filters
             end
         end
-        
-        class Filters
-            include Jekyll::Filters
-            include Liquid::StandardFilters
-            
-            def initialize(site)
-                @site    = site
-                @context = ReduceTitleRedundancy::Context.new(site)
-            end
-        end
-        
-        class Context
-            attr_reader :site
-            
-            def initialize(site)
-                @site = site
-            end
-            
-            def registers
-                { :site => site }
-            end
-        end
     end
 end

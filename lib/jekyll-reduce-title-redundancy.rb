@@ -1,9 +1,4 @@
 require "jekyll"
 require "reduce-title-redundancy/generator"
-
-module Jekyll
-    module ReduceTitleRedundancy
-        autoload :Context, "reduce-title-redundancy/context"
-        autoload :Filters, "reduce-title-redundancy/filters"
-    end
-end
+require "reduce-title-redundancy/context"
+require "reduce-title-redundancy/filters"
